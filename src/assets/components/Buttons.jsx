@@ -5,7 +5,7 @@ import { useState } from 'react';
 const Buttons = (props) => {
 
 const handleAmount=(e)=>{
-  props.setAmount((Number)(e.target.value))
+  props.setAmount(parseInt(e.target.value))
 }
 const handleCurrency=(e)=>{
   props.setCurrency(e.target.value)
@@ -19,7 +19,7 @@ const handleCurrency=(e)=>{
         <span>Currency Type</span>
       </div>
       <div className='flex justify-between'>
-        <input className='bg-blue-100' type='number' value={props.amount} onChange={handleAmount}/>
+        <input className='bg-blue-100' placeholder='Enter amount here' type='number' value={props.amount} onChange={handleAmount}/>
         <select className='border black rounded bg-amber-50' name="cars" id="cars" value={props.currency} onChange={handleCurrency}>
             {props.list.map((curr)=>(
               <option key={curr} value={curr}>{curr}</option>

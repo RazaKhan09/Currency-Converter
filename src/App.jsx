@@ -6,8 +6,8 @@ import Buttons from './assets/components/Buttons'
 function App() {
   const [from, setFrom] = useState("usd")
   const [to,setTo]=useState("inr")
-  const [amtFrom, setAmtFrom]=useState("")
-  const [amtTo,setAmtTo]=useState("")
+  const [amtFrom, setAmtFrom]=useState(0)
+  const [amtTo,setAmtTo]=useState(0)
 
  function handleSwap(){
     setFrom(to)
