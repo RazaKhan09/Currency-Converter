@@ -1,5 +1,5 @@
 {
-  "homepage": "https://(github username).github.io/Currency-Converter",
+  "homepage": "https://RazaKhan09.github.io/Currency-Converter",
   "name": "currencyconverter",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
