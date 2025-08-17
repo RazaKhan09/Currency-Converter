@@ -25,14 +25,46 @@ function App() {
 
   return (
     <>
-      <div className='flex justify-center items-center h-screen w-screen bg-gray-500'>
-        <div className='flex flex-col justify-center items-center h-80 w-140 bg-white'>
-          <Buttons label="From" amount={amtFrom} setAmount={setAmtFrom} currency={from} setCurrency={setFrom} list={option}/>
-            <button className='h-10 w-15 bg-blue-500 rounded' onClick={handleSwap}>Swap</button>
-          <Buttons label="To" amount={amtTo} currency={to} setCurrency={setTo} list={option}/>  
-            <button className='h-10 w-100 bg-blue-500 rounded' onClick={handleConvert}>Convert {from.toUpperCase()} to {to.toUpperCase()}</button>
-        </div>
-      </div>
+      <div className="flex justify-center items-center h-screen w-screen bg-gray-500 bg-[url(./image.jpg)] bg-cover bg-center" >
+  <div className="flex flex-col justify-center items-center gap-4 p-6 rounded-2xl shadow-lg bg-white h-80 w-140">
+
+    {/* From Currency Input */}
+    <Buttons
+      label="From"
+      amount={amtFrom}
+      setAmount={setAmtFrom}
+      currency={from}
+      setCurrency={setFrom}
+      list={option}
+    />
+
+    {/* Swap Button */}
+    <button
+      className="h-10 px-6 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition"
+      onClick={handleSwap}
+    >
+      Swap
+    </button>
+
+    {/* To Currency Input */}
+    <Buttons
+      label="To"
+      amount={amtTo}
+      currency={to}
+      setCurrency={setTo}
+      list={option}
+    />
+
+    {/* Convert Button */}
+    <button
+      className="h-10 w-full bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition"
+      onClick={handleConvert}
+    >
+      Convert {from.toUpperCase()} to {to.toUpperCase()}
+    </button>
+
+  </div>
+</div>
     </>
   )
 }

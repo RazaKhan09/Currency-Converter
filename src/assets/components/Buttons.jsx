@@ -13,20 +13,38 @@ const handleCurrency=(e)=>{
 
 
   return (
-    <div className='flex flex-col justify-between h-30 w-100 bg-emerald-50'>
-      <div className='flex justify-between '>
-        <span>{props.label}</span>
-        <span>Currency Type</span>
-      </div>
-      <div className='flex justify-between'>
-        <input className='bg-blue-100' placeholder='Enter amount here' type='number' value={props.amount} onChange={handleAmount}/>
-        <select className='border black rounded bg-amber-50' name="cars" id="cars" value={props.currency} onChange={handleCurrency}>
-            {props.list.map((curr)=>(
-              <option key={curr} value={curr}>{curr}</option>
-            ))}
-        </select>
-      </div>
-    </div>
+    <div className="flex flex-col justify-between h-30 w-100 bg-emerald-50 p-4 rounded-lg shadow">
+  {/* Labels Row */}
+  <div className="flex justify-between items-center mb-2">
+    <span className="font-medium text-gray-700">{props.label}</span>
+    <span className="text-sm text-gray-500">Currency Type</span>
+  </div>
+
+  {/* Input & Dropdown Row */}
+  <div className="flex justify-between items-center gap-3">
+    <input
+      className="flex-1 bg-blue-100 border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      placeholder="Enter amount here"
+      type="number"
+      value={props.amount}
+      onChange={handleAmount}
+    />
+
+    <select
+      className="border border-gray-400 rounded bg-amber-50 px-2 py-1"
+      name="currency"
+      id="currency"
+      value={props.currency}
+      onChange={handleCurrency}
+    >
+      {props.list.map((curr) => (
+        <option key={curr} value={curr}>
+          {curr}
+        </option>
+      ))}
+    </select>
+  </div>
+</div>
   )
 }
 
